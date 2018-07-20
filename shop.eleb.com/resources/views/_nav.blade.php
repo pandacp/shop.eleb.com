@@ -36,21 +36,44 @@
                     </div>
                     <button type="submit" class="btn btn-default">Submit</button>
                 </form>
+                @auth
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="{{ route('shops.create') }}">注册商户</a></li>
                     <li><a href="{{ route('users.create') }}">注册用户</a></li>
                     {{--<li><a href="{{ route('shop_categories.create') }}">添加分类</a></li>--}}
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">个人中心 <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
+                            <li><a href="{{ route('users.form',[1]) }}">修改密码</a></li>
+                            <li><a href="{{ route('users.edit',[1]) }}">修改个人信息</a></li>
                             <li><a href="#">Something else here</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
+                            <li>
+                                <form action="{{ route('logout') }}" method="post">
+                                    {{ csrf_field() }}
+                                    {{ method_field('DELETE') }}
+                                    <button class="btn btn-primary">注销</button>
+                                </form>
+                            </li>
                         </ul>
                     </li>
                 </ul>
+                @endauth
+                @guest
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{{ route('login') }}">登录</a></li>
+                    {{--<li class="dropdown">--}}
+                        {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>--}}
+                        {{--<ul class="dropdown-menu">--}}
+                            {{--<li><a href="#">Action</a></li>--}}
+                            {{--<li><a href="#">Another action</a></li>--}}
+                            {{--<li><a href="#">Something else here</a></li>--}}
+                            {{--<li role="separator" class="divider"></li>--}}
+                            {{--<li><a href="#">Separated link</a></li>--}}
+                        {{--</ul>--}}
+                    {{--</li>--}}
+                </ul>
+                @endguest
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>

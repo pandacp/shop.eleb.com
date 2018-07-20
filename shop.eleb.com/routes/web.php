@@ -16,3 +16,11 @@ Route::get('/', function () {
 });
 Route::resource('shops','ShopController');
 Route::resource('users','UserController');
+//Route::get('users','UserController')->name('index');
+Route::get('users/{user}/form','UserController@form')->name('users.form');
+Route::patch('users/{user}reset/reset','UserController@reset')->name('users.reset');
+
+//登录
+Route::get('login', 'SessionController@login')->name('login');
+Route::post('login', 'SessionController@store')->name('login');
+Route::delete('logout', 'SessionController@destroy')->name('logout');

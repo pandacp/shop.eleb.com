@@ -5,13 +5,22 @@ namespace App\Http\Controllers;
 use App\Models\Shop;
 use App\Models\Shop_category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ShopController extends Controller
 {
     //
+    public function check(){
+        $this->middleware([
+            'except'=>['index']
+        ]);
+    }
     public function index()
     {
-//        return view('');
+        if(Auth::check()){
+            return view('shops/list');
+        }
+        return redirect()->route('login')->with('danger','请登录');
     }
 
     public function create()
