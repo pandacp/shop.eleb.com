@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {
@@ -33,15 +34,19 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
+        $user = Auth::user()->id;
         $this->validate($request,[
             'name'=>'required|max:10',
-            'password'=>'required',
-            'email'=>'required',
+            'shop_id'=>'required',
+            'email'=>[
+                'required',
+                Rule::unique('users')->ignore($user->id),
+            ],
         ],[
             'name.required'=>'用户名不能为空',
             'name.max'=>'用户名不能超过10位',
-            'password.required'=>'密码不能为空',
             'email.required'=>'邮箱不能为空',
+            'email.unique'=>'邮箱被使用',
         ]);
 
         $user = User::create([
@@ -66,12 +71,16 @@ class UserController extends Controller
     {
         $this->validate($request,[
             'name'=>'required|max:10',
-            'email'=>'required',
             'shop_id'=>'required',
+            'email'=>[
+                'required',
+                Rule::unique('users')->ignore($user->id),
+            ],
         ],[
             'name.required'=>'用户名不能为空',
             'name.max'=>'用户名不能超过10位',
             'email.required'=>'邮箱不能为空',
+            'email.unique'=>'邮箱被使用',
         ]);
         $status = 1;
         $user->update([

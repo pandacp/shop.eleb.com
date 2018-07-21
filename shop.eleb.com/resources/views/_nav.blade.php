@@ -39,10 +39,17 @@
                 @auth
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="{{ route('shops.create') }}">注册商户</a></li>
-                    <li><a href="{{ route('users.create') }}">注册用户</a></li>
+                    {{--<li><a href="{{ route('users.create') }}">注册用户</a></li>--}}
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">分类和菜品管理 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ route('menu_categories.index') }}">分类列表</a></li>
+                            <li><a href="{{ route('menus.index') }}">菜品列表</a></li>
+                        </ul>
+                    </li>
                     {{--<li><a href="{{ route('shop_categories.create') }}">添加分类</a></li>--}}
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">个人中心 <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="{{ route('users.form',[1]) }}">修改密码</a></li>
                             <li><a href="{{ route('users.edit',[1]) }}">修改个人信息</a></li>

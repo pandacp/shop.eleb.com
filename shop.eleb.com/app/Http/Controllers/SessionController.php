@@ -17,6 +17,7 @@ class SessionController extends Controller
 
     public function store(User $user,Request $request)
     {
+
         //商家信息为过审,商加账号的不可以使用
 //        $user = User::where('name',$request->name)->get();
 //        $shop_id = '';
@@ -45,15 +46,23 @@ class SessionController extends Controller
             'name'=>$request->name,
             'password'=>$request->password,
         ],$request->rememberToken)){
+            //账号状态验证
+            $status = Auth::user()->status;
+            if($status!=1){
+                Auth::logout();//清除session中的数据
+                return back()->with('danger','账号状态异常,不能使用该账号');
+            }
+            //商户状态验证
             $id = Auth::user()->shop_id;
             $shops = Shop::where('id',$id)->get();
-        $status = '';
-        foreach ($shops as $shop){
-            $status = $shop->status;
-        }
-        if($status!=1){
-            return back()->with('danger','商户为通过审核,不能使用该账号');
-        }
+            $status = '';
+            foreach ($shops as $shop){
+                $status = $shop->status;
+            }
+            if($status!=1){
+                Auth::logout();//清除session中的数据
+                return back()->with('danger','商户为通过审核,不能使用该账号');
+            }
             return redirect()->route('users.index')->with('success','登录成功');
         }else{
             return back()->with('danger','用户名或密码错误');

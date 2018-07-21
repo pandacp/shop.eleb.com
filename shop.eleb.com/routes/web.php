@@ -24,3 +24,13 @@ Route::patch('users/{user}reset/reset','UserController@reset')->name('users.rese
 Route::get('login', 'SessionController@login')->name('login');
 Route::post('login', 'SessionController@store')->name('login');
 Route::delete('logout', 'SessionController@destroy')->name('logout');
+
+//菜品分类
+Route::resource('menu_categories','Menu_categoryController');
+//Route::get('menu_categories/{menu_category}/create','Menu_categoryController@create')->name('create.form');
+//菜品
+Route::resource('menus','MenuController');
+
+
+
+
