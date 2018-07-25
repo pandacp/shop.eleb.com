@@ -69,11 +69,11 @@ class ShopController extends Controller
             //添加商户信息
             $file=$request->shop_img;
             $rating = 0;
-            $filename = $file->store('public/dp_img');
+//            $filename = $file->store('public/dp_img');
             $result = Shop::create([
                 'shop_name'=>$request->shop_name,
-                'shop_img'=>$filename,
-                'rating'=>$rating,
+                'shop_img'=>$file,
+                'shop_rating'=>$rating,
                 'brand'=>$request->brand,
                 'on_time'=>$request->on_time,
                 'fengniao'=>$request->fengniao,

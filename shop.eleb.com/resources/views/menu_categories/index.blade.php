@@ -17,8 +17,9 @@
                     <td>{{ $menu_category->name }}</td>
                     <td>{{ $menu_category->description }}</td>
                     <td>{{ $menu_category->shop->shop_name }}</td>
-                    <td>{{ $menu_category->is_selected }}</td>
+                    <td>@if($menu_category->is_selected==1)<span style="color:red;"><a href="" class="glyphicon glyphicon-ok"></a></span>@else否@endif</td>
                     <td>
+                        <a href="{{ route('menu_categories.show',[1]) }}" class="glyphicon glyphicon-eye-open"></a>&emsp;
                         <a href="{{ route('menu_categories.create') }}" class="glyphicon glyphicon-plus"></a>&emsp;
                         <a href="{{ route('menu_categories.edit',[$menu_category]) }}" class="glyphicon glyphicon-list-alt"></a>
                     </td>

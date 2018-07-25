@@ -38,6 +38,8 @@
                 </form>
                 @auth
                 <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{{ route('activities.index') }}">活动列表</a></li>
+
                     <li><a href="{{ route('shops.create') }}">注册商户</a></li>
                     {{--<li><a href="{{ route('users.create') }}">注册用户</a></li>--}}
                     <li class="dropdown">

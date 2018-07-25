@@ -63,7 +63,8 @@ class SessionController extends Controller
                 Auth::logout();//清除session中的数据
                 return back()->with('danger','商户为通过审核,不能使用该账号');
             }
-            return redirect()->route('users.index')->with('success','登录成功');
+//            return redirect()->route('users.index')->with('success','登录成功');
+            return redirect()->route('menu_categories.show',[1])->with('success','登录成功');
         }else{
             return back()->with('danger','用户名或密码错误');
         }

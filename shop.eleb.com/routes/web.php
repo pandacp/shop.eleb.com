@@ -30,7 +30,18 @@ Route::resource('menu_categories','Menu_categoryController');
 //Route::get('menu_categories/{menu_category}/create','Menu_categoryController@create')->name('create.form');
 //菜品
 Route::resource('menus','MenuController');
+//活动
+Route::get('activities','ActivityController@index')->name('activities.index');
+Route::get('activities/{activity}','ActivityController@show')->name('activities.show');
 
 
 
 
+//图片上传
+Route::post('upload',function(){
+    $storage = \Illuminate\Support\Facades\Storage::disk('oss');
+    $filename = $storage->putFile('upload',request()->file('file'));
+    return [
+        'filename'=>$storage->url($filename),
+    ];
+})->name('upload');

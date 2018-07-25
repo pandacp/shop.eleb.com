@@ -15,8 +15,31 @@ class Menu_categoryController extends Controller
     public function __construct()
     {
         $this->middleware('auth',[
-            'except'=>['index']
+            'except'=>['index','show']
         ]);
+    }
+
+    public function show(Request $request)
+    {
+        $goods_name = $request->goods_name;
+        $goods_price = $request->goods_price;
+        $goods_price2 = $request->goods_price2;
+
+        $keyword = $request->keyword;
+        if($keyword){
+//            $homes = Article::where('category_id','like',"{$keyword}")->paginate(3);
+            $menus = Menu::where('category_id',"{$keyword}")->paginate(5);
+        }elseif($goods_price){
+            $menus = Menu::whereBetween('goods_price',[$goods_price,$goods_price2])->paginate(3);
+
+        }elseif($goods_name){
+            $menus = Menu::where('goods_name','like',"%{$goods_name}%")->paginate(1);
+
+        }else{
+            $menus = Menu::paginate(1);
+        }
+        $menu_categories = Menu_category::all();//菜品分类
+        return view('menu_categories/show',compact('menu_categories','menus','keyword','goods_name','goods_price','goods_price2'));
     }
     //菜单分类列表
     public function index(Menu_category $menu_category)

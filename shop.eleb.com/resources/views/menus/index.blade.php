@@ -21,7 +21,7 @@
             @foreach($menus as $menu)
                 <tr>
                     <td>{{ $menu->goods_name }}</td>
-                    <td><img src="{{ \Illuminate\Support\Facades\Storage::url($menu->goods_img) }}" alt="" style="width:200px"></td>
+                    <td><img src="{{ $menu->goods_img }}" alt="" style="width:200px"></td>
                     <td>{{ $menu->rating }}</td>
                     <td>{{ $menu->menu_category->name }}</td>
                     <td>{{ $menu->goods_price }}</td>
