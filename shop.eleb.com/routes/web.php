@@ -33,7 +33,8 @@ Route::resource('menus','MenuController');
 //活动
 Route::get('activities','ActivityController@index')->name('activities.index');
 Route::get('activities/{activity}','ActivityController@show')->name('activities.show');
-
+//订单
+Route::resource('orders','OrderController');
 
 
 
