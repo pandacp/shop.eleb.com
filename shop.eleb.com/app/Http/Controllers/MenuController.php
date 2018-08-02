@@ -77,8 +77,8 @@ class MenuController extends Controller
                 }
                 $menu = DB::table('order_goods')->where('goods_name', 'like', "%{$request->menu}%")->first();
                 $name = $menu->goods_name;
-
-                return view('menus/menu', compact('amount', 'name'));
+                $sell = "总销量";
+                return view('menus/menu', compact('amount', 'name','sell'));
             }
 
             $menu_categories = Menu_category::all();

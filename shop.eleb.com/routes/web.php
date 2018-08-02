@@ -35,8 +35,9 @@ Route::get('activities','ActivityController@index')->name('activities.index');
 Route::get('activities/{activity}','ActivityController@show')->name('activities.show');
 //订单
 Route::resource('orders','OrderController');
-
-
+//抽奖活动
+Route::resource('events','EventController');
+Route::get('event','EventController@check')->name('check');
 
 //图片上传
 Route::post('upload',function(){
