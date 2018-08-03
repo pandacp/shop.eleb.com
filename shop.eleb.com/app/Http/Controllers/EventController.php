@@ -27,9 +27,13 @@ class EventController extends Controller
 
     public function store(Request $request)
     {
-        //同一个活动不能报名两次
-        
-//        $count = DB::table('event_members')->where('events_id',$request->events_id)->count();
+        //1.报名人数限制
+        $event = Event::where('id',$request->events_id)->first();//限制人数
+        $members = Event_member::where('events_id',$request->events_id)->count();//已报名人数
+        if($members==$event->signup_num){
+            return back()->with('danger','该活动报名人数已满,欢迎下次再来');
+        }
+        //2.同一个活动不能报名两次
         $counts = DB::table('event_members')->where([['member_id',Auth::user()->id],['events_id',$request->events_id]])->get();
 
         if($counts->isNotEmpty()){
@@ -49,5 +53,9 @@ class EventController extends Controller
         return view('events/list',compact('prizes'));
     }
 
+    public function show(Event $event)
+    {
+        return view('events/show',compact('event'));
+    }
 
 }

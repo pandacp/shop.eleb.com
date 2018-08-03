@@ -37,6 +37,7 @@ Route::get('activities/{activity}','ActivityController@show')->name('activities.
 Route::resource('orders','OrderController');
 //抽奖活动
 Route::resource('events','EventController');
+//查看抽奖结果
 Route::get('event','EventController@check')->name('check');
 
 //图片上传

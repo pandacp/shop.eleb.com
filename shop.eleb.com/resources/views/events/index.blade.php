@@ -21,7 +21,7 @@
                     {{--<td>{{ $event->is_prize }}</td>--}}
                     <td>
                         <a href="{{ route('events.show',[$event]) }}" class="glyphicon glyphicon-eye-open"></a>&emsp;
-                        {{--<a href="{{ route('events.store',[$event]) }}">报名</a>--}}
+                        <a href="{{ route('events.create') }}">报名</a>
                     </td>
                 </tr>
             @endforeach
