@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="de43d874-2d31-41ed-9829-91d5339f6925" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shop.eleb.com/app/Http/Controllers/OrderController.php" afterPath="$PROJECT_DIR$/shop.eleb.com/app/Http/Controllers/OrderController.php" />
-    </list>
+    <list default="true" id="de43d874-2d31-41ed-9829-91d5339f6925" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -398,7 +396,7 @@
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../admin.eleb.com" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -538,12 +536,12 @@
       <workItem from="1533306901622" duration="1290000" />
       <workItem from="1533343576563" duration="737000" />
       <workItem from="1533345607349" duration="860000" />
-      <workItem from="1533348082094" duration="830000" />
+      <workItem from="1533348082094" duration="1432000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="117378000" />
+    <option name="totallyTimeSpent" value="117980000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
