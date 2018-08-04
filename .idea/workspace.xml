@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de43d874-2d31-41ed-9829-91d5339f6925" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shop.eleb.com/app/Http/Controllers/OrderController.php" afterPath="$PROJECT_DIR$/shop.eleb.com/app/Http/Controllers/OrderController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,8 +37,8 @@
       <file leaf-file-name="OrderController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/shop.eleb.com/app/Http/Controllers/OrderController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
-              <caret line="76" column="67" lean-forward="true" selection-start-line="76" selection-start-column="67" selection-end-line="76" selection-end-column="67" />
+            <state relative-caret-position="511">
+              <caret line="74" column="30" lean-forward="true" selection-start-line="74" selection-start-column="30" selection-end-line="74" selection-end-column="30" />
               <folding>
                 <element signature="e#40#61#0#PHP" expanded="true" />
               </folding>
@@ -539,12 +538,12 @@
       <workItem from="1533306901622" duration="1290000" />
       <workItem from="1533343576563" duration="737000" />
       <workItem from="1533345607349" duration="860000" />
-      <workItem from="1533348082094" duration="727000" />
+      <workItem from="1533348082094" duration="830000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="117275000" />
+    <option name="totallyTimeSpent" value="117378000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -945,8 +944,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/shop.eleb.com/app/Http/Controllers/OrderController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="76" column="67" lean-forward="true" selection-start-line="76" selection-start-column="67" selection-end-line="76" selection-end-column="67" />
+        <state relative-caret-position="511">
+          <caret line="74" column="30" lean-forward="true" selection-start-line="74" selection-start-column="30" selection-end-line="74" selection-end-column="30" />
           <folding>
             <element signature="e#40#61#0#PHP" expanded="true" />
           </folding>

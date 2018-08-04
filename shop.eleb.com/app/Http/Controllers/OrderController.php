@@ -68,13 +68,13 @@ class OrderController extends Controller
             $order->update([
                 'status' => -1,
             ]);
-            return redirect()->route('orders.index')->with('取消订单');
+            return redirect()->route('orders.index')->with('danger','取消订单');
 
         } elseif ($request->status == 1) {
             $order->update([
                 'status' => 2,
             ]);
-            return redirect()->route('orders.index')->with('发货成功');
+            return redirect()->route('orders.index')->with('success','发货成功');
         }
     }
 
