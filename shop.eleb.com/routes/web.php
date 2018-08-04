@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
 Route::resource('shops','ShopController');
 Route::resource('users','UserController');
 //Route::get('users','UserController')->name('index');
