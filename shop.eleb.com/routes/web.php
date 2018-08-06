@@ -32,7 +32,7 @@ Route::resource('menu_categories','Menu_categoryController');
 //菜品
 Route::resource('menus','MenuController');
 //活动
-Route::get('activities','ActivityController@index')->name('activities.index');
+Route::get('/activities.html','ActivityController@index')->name('activities.index');
 Route::get('activities/{activity}','ActivityController@show')->name('activities.show');
 //订单
 Route::resource('orders','OrderController');

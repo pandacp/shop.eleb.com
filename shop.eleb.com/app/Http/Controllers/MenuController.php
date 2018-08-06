@@ -7,6 +7,7 @@ use App\Models\Menu_category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 
@@ -133,6 +134,9 @@ class MenuController extends Controller
             'satisfy_count' => $satisfy_count,
             'satisfy_rate' => $satisfy_rate,
         ]);
+        //添加菜品之后需要删除redis;
+        Redis::del('shop');
+//        Redis::del('shops');
         return redirect()->route('menus.index')->with('success', '添加成功');
     }
 
